@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Good Morning, My Love 🤍</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'DM Sans',sans-serif;
+    color:#624c55;
+    background:#fff8fa;
+    overflow-x:hidden;
+}
+
+body.lock{
+    overflow:hidden;
+}
+
+
+/* =========================================
+   FLOATING PARTICLES
+========================================= */
+
+#particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:0;
+}
+
+.particle{
+    position:absolute;
+    bottom:-40px;
+    opacity:0;
+    color:#d895aa;
+    animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:.6;
+    }
+
+    100%{
+        transform:
+            translateY(-110vh)
+            translateX(40px)
+            rotate(25deg);
+        opacity:0;
+    }
+}
+
+
+/* =========================================
+   OPENING
+========================================= */
+
+.opening{
+    position:fixed;
+    inset:0;
+    z-index:100;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:22px;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            #ffe0ea,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            #ffe9d8,
+            transparent 35%
+        ),
+        #fff8fa;
+
+    transition:1s ease;
+}
+
+.opening.hide{
+    opacity:0;
+    transform:scale(1.05);
+    pointer-events:none;
+}
+
+.open-card{
+    width:min(430px,100%);
+    text-align:center;
+}
+
+.heart-ring{
+    width:105px;
+    height:105px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:42px;
+
+    border:1px solid #e4b2c2;
+
+    box-shadow:
+        0 0 0 13px rgba(228,178,194,.10),
+        0 0 0 27px rgba(228,178,194,.05);
+
+    animation:breathe 2.5s infinite;
+}
+
+@keyframes breathe{
+    50%{
+        transform:scale(1.06);
+    }
+}
+
+.open-small{
+    margin-top:32px;
+
+    font-size:10px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+
+    color:#ad7489;
+}
+
+.open-card h1{
+    margin-top:14px;
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:55px;
+    line-height:.9;
+
+    color:#61444f;
+}
+
+.open-card p{
+    max-width:350px;
+
+    margin:20px auto 27px;
+
+    font-size:13px;
+    line-height:1.9;
+
+    color:#876d77;
+}
+
+.open-button{
+    border:none;
+    cursor:pointer;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    color:white;
+
+    font-weight:600;
+
+    background:
+        linear-gradient(
+            135deg,
+            #cf8da4,
+            #a96b85
+        );
+
+    box-shadow:
+        0 14px 30px rgba(169,107,133,.25);
+
+    transition:.25s;
+}
+
+.open-button:active{
+    transform:scale(.95);
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+main{
+    position:relative;
+    z-index:1;
+
+    width:min(720px,100%);
+
+    margin:auto;
+
+    padding:
+        20px
+        16px
+        80px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+    min-height:90vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:40px 8px;
+}
+
+.eyebrow{
+    font-size:10px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+
+    color:#b4778b;
+}
+
+.hero h2{
+    margin-top:18px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(58px,15vw,90px);
+    line-height:.82;
+
+    color:#60434e;
+}
+
+.hero h2 em{
+    font-style:normal;
+    color:#bd7890;
+}
+
+.hero-line{
+    width:55px;
+    height:1px;
+
+    margin:28px auto;
+
+    background:#d9a5b7;
+}
+
+.hero p{
+    max-width:530px;
+
+    margin:auto;
+
+    font-size:13px;
+    line-height:1.95;
+
+    color:#836b74;
+}
+
+
+/* =========================================
+   GENERAL CARD
+========================================= */
+
+.section{
+    margin:20px 0;
+
+    padding:32px 22px;
+
+    border-radius:30px;
+
+    background:
+        rgba(255,255,255,.78);
+
+    border:1px solid #f2dfe5;
+
+    box-shadow:
+        0 20px 60px rgba(120,76,91,.08);
+}
+
+.section h3{
+    margin-bottom:17px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:34px;
+    line-height:1;
+
+    color:#704e5b;
+}
+
+.section p{
+    font-size:14px;
+    line-height:2.05;
+
+    color:#735d66;
+}
+
+.section p+p{
+    margin-top:16px;
+}
+
+
+/* =========================================
+   ROMANTIC INTRO
+========================================= */
+
+.love-note{
+    position:relative;
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff0f5,
+            #fffaf7
+        );
+}
+
+.love-note::before{
+    content:"♡";
+
+    position:absolute;
+
+    right:-15px;
+    top:-50px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:180px;
+
+    color:rgba(205,126,151,.08);
+}
+
+
+/* =========================================
+   QUOTE
+========================================= */
+
+.big-quote{
+    text-align:center;
+
+    padding:
+        42px
+        22px;
+}
+
+.quote-mark{
+    height:40px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:65px;
+
+    color:#cf8da4;
+}
+
+.big-quote p{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:26px;
+    line-height:1.55;
+    font-weight:600;
+
+    color:#704d5b;
+}
+
+
+/* =========================================
+   POLAROID GALLERY
+========================================= */
+
+.polaroid-gallery{
+    margin:28px 0;
+
+    padding:
+        42px
+        15px
+        40px;
+
+    border-radius:32px;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255,210,224,.55),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(255,224,197,.55),
+            transparent 32%
+        ),
+        #fffaf8;
+
+    border:1px solid #f1dfe5;
+
+    box-shadow:
+        0 25px 70px rgba(112,74,88,.09);
+
+    overflow:hidden;
+}
+
+.memory-header{
+    text-align:center;
+
+    max-width:550px;
+
+    margin:
+        0 auto
+        38px;
+}
+
+.memory-header span{
+    font-size:10px;
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    color:#b4778b;
+}
+
+.memory-header h3{
+    margin-top:14px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:45px;
+    line-height:.9;
+
+    color:#674854;
+}
+
+.memory-header p{
+    margin-top:18px;
+
+    font-size:13px;
+    line-height:1.9;
+
+    color:#89717a;
+}
+
+
+/* POLAROIDS */
+
+.polaroids{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:25px;
+
+    padding:
+        15px
+        4px
+        35px;
+}
+
+.polaroid{
+    position:relative;
+
+    width:min(245px,78vw);
+
+    padding:
+        11px
+        11px
+        25px;
+
+    background:#fff;
+
+    box-shadow:
+        0 20px 35px rgba(72,48,57,.18),
+        0 3px 8px rgba(72,48,57,.08);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.polaroid:hover{
+    transform:
+        rotate(0)
+        translateY(-10px)
+        scale(1.04);
+
+    box-shadow:
+        0 30px 50px rgba(72,48,57,.23);
+}
+
+.polaroid-one{
+    transform:rotate(-6deg);
+}
+
+.polaroid-two{
+    transform:rotate(4deg);
+    margin-top:18px;
+}
+
+.polaroid-three{
+    transform:rotate(-2deg);
+}
+
+.photo-frame{
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    overflow:hidden;
+
+    background:#f6e2e8;
+}
+
+.photo-frame img{
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    transition:transform .5s ease;
+}
+
+.polaroid:hover img{
+    transform:scale(1.05);
+}
+
+.tape{
+    position:absolute;
+
+    width:65px;
+    height:20px;
+
+    top:-10px;
+    left:50%;
+
+    transform:
+        translateX(-50%)
+        rotate(-2deg);
+
+    background:
+        rgba(238,202,180,.65);
+
+    z-index:2;
+}
+
+.polaroid-caption{
+    padding-top:13px;
+
+    text-align:center;
+}
+
+.polaroid-caption span{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:21px;
+    font-weight:600;
+
+    color:#765561;
+}
+
+.polaroid-caption p{
+    margin-top:4px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:16px;
+
+    line-height:1.3;
+
+    color:#9a7b84;
+}
+
+.memory-bottom{
+    max-width:530px;
+
+    margin:
+        5px auto
+        0;
+
+    text-align:center;
+}
+
+.memory-bottom .tiny-heart{
+    font-size:28px;
+
+    color:#c9859c;
+}
+
+.memory-bottom p{
+    margin-top:10px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:21px;
+    line-height:1.55;
+
+    color:#765461;
+}
+
+.memory-bottom span{
+    display:block;
+
+    margin-top:13px;
+
+    font-size:11px;
+    letter-spacing:2px;
+
+    color:#b78496;
+}
+
+
+/* =========================================
+   PROMISES
+========================================= */
+
+.promise{
+    display:grid;
+
+    gap:10px;
+
+    margin-top:20px;
+}
+
+.promise-item{
+    padding:14px 16px;
+
+    border-radius:18px;
+
+    background:#fff7f9;
+
+    border:1px solid #f4e1e7;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+    color:#765f68;
+}
+
+.promise-item b{
+    color:#ae6d84;
+}
+
+
+/* =========================================
+   LETTER
+========================================= */
+
+.letter{
+    padding:
+        36px
+        25px;
+
+    border-radius:8px;
+
+    background:#fffdf9;
+
+    border:1px solid #eadfda;
+
+    box-shadow:
+        0 20px 55px rgba(107,80,69,.09);
+}
+
+.letter-to{
+    margin-bottom:22px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:25px;
+    font-weight:600;
+
+    color:#765561;
+}
+
+.letter p{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:20px;
+    line-height:1.75;
+
+    color:#67525a;
+}
+
+.letter-sign{
+    margin-top:27px;
+
+    text-align:right;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:24px;
+    font-weight:600;
+
+    color:#9a6479;
+}
+
+
+/* =========================================
+   FINAL
+========================================= */
+
+.final{
+    text-align:center;
+
+    padding:
+        80px
+        8px
+        20px;
+}
+
+.final-heart{
+    font-size:45px;
+
+    animation:breathe 2s infinite;
+}
+
+.final h3{
+    margin-top:20px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:53px;
+    line-height:.95;
+
+    color:#674754;
+}
+
+.final p{
+    max-width:540px;
+
+    margin:
+        20px auto;
+
+    font-size:13px;
+
+    line-height:1.95;
+
+    color:#806b73;
+}
+
+.final strong{
+    color:#805466;
+}
+
+.end{
+    margin-top:30px;
+
+    font-size:10px;
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    color:#bd899b;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:520px){
+
+    main{
+        padding-left:13px;
+        padding-right:13px;
+    }
+
+    .section{
+        padding:
+            28px
+            19px;
+    }
+
+    .memory-header h3{
+        font-size:40px;
+    }
+
+    .polaroids{
+        gap:30px;
+    }
+
+    .polaroid{
+        width:230px;
+    }
+
+    .polaroid-two{
+        margin-top:0;
+    }
+
+    .letter{
+        padding:
+            30px
+            20px;
+    }
+
+    .letter p{
+        font-size:19px;
+    }
+
+    .final h3{
+        font-size:48px;
+    }
+}
+</style>
+</head>
+
+
+<body class="lock">
+
+
+<!-- =========================================
+     FLOATING PARTICLES
+========================================= -->
+
+<div id="particles"></div>
+
+
+<!-- =========================================
+     OPENING SCREEN
+========================================= -->
+
+<section class="opening" id="opening">
+
+    <div class="open-card">
+
+        <div class="heart-ring">
+            🤍
+        </div>
+
+        <div class="open-small">
+            a little letter for you
+        </div>
+
+        <h1>
+            Good Morning,<br>
+            My Love
+        </h1>
+
+        <p>
+            Jangan dibuka sebelum kamu benar-benar bangun yaa.
+            Aku pengen pesan ini jadi hal kecil pertama
+            yang menemani pagi kamu. 🌷
+        </p>
+
+        <button
+            class="open-button"
+            onclick="openLetter()">
+
+            Open my heart 🤍
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     MAIN CONTENT
+========================================= -->
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="eyebrow">
+        for the person who makes my days softer
+    </div>
+
+    <h2>
+        Good<br>
+        <em>Morning,</em><br>
+        Sayang.
+    </h2>
+
+    <div class="hero-line"></div>
+
+    <p>
+        Kalau dunia hari ini terasa terlalu ramai,
+        semoga halaman kecil ini bisa menjadi tempat
+        yang sebentar saja membuat hati kamu merasa tenang.
+    </p>
+
+</section>
+
+
+
+<!-- INTRO -->
+
+<section class="section love-note">
+
+    <h3>
+        Untuk kamu,
+        yang selalu punya tempat di hati aku. 🤍
+    </h3>
+
+    <p>
+        Good morning sayanggggggkuu,
+        cintaaakuu, semestaakuuu😘🤍.
+        Bangunn yaa sayanggg.
+        Aku harap ketika kamu membaca ini,
+        kamu sedang membuka mata dengan hati yang ringan
+        dan senyum kecil di wajah kamu.
+    </p>
+
+    <p>
+        Aku ingin pagi kamu dimulai dengan sesuatu yang lembut.
+        Sesuatu yang mengingatkan kamu bahwa ada seseorang
+        yang selalu berharap kamu baik-baik saja.
+        Ada seseorang yang ingin melihat kamu tersenyum,
+        ingin mendengar cerita kamu,
+        dan ingin tahu bagaimana hari kamu berjalan.
+    </p>
+
+    <p>
+        Aku tidak tahu hari ini akan membawa kamu ke mana.
+        Mungkin akan ada banyak hal menyenangkan,
+        mungkin juga ada sesuatu yang sedikit melelahkan.
+        Tapi apa pun yang menunggu kamu di luar sana,
+        aku harap kamu menjalaninya tanpa terlalu keras
+        kepada diri sendiri.
+    </p>
+
+</section>
+
+
+
+<!-- POLAROID -->
+
+<section class="polaroid-gallery">
+
+    <div class="memory-header">
+
+        <span>
+            ♡ our little memories ♡
+        </span>
+
+        <h3>
+            Some moments,<br>
+            I'd keep forever.
+        </h3>
+
+        <p>
+            Karena ada beberapa foto yang bukan cuma sekadar foto.
+            Ada cerita, ada rasa, ada senyum,
+            dan ada seseorang yang selalu punya tempat
+            spesial di hati aku.
+        </p>
+
+    </div>
+
+
+    <div class="polaroids">
+
+
+        <!-- FOTO 1 -->
+
+        <div class="polaroid polaroid-one">
+
+            <div class="tape"></div>
+
+            <div class="photo-frame">
+
+                <img
+                    src="foto1.jpg"
+                    alt="Our favorite memory">
+
+            </div>
+
+            <div class="polaroid-caption">
+
+                <span>
+                    our little moment
+                </span>
+
+                <p>
+                    one of the moments
+                    I secretly keep in my heart 🤍
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FOTO 2 -->
+
+        <div class="polaroid polaroid-two">
+
+            <div class="tape"></div>
+
+            <div class="photo-frame">
+
+                <img
+                    src="foto2.jpg"
+                    alt="A beautiful memory">
+
+            </div>
+
+            <div class="polaroid-caption">
+
+                <span>
+                    my favorite view
+                </span>
+
+                <p>
+                    somehow,
+                    you always make ordinary moments feel special 🌷
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FOTO 3 -->
+
+        <div class="polaroid polaroid-three">
+
+            <div class="tape"></div>
+
+            <div class="photo-frame">
+
+                <img
+                    src="foto3.jpg"
+                    alt="A special memory">
+
+            </div>
+
+            <div class="polaroid-caption">
+
+                <span>
+                    kept with love
+                </span>
+
+                <p>
+                    a picture today,
+                    a memory I'll smile about tomorrow ✨
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="memory-bottom">
+
+        <div class="tiny-heart">
+            ♡
+        </div>
+
+        <p>
+            "Kalau suatu hari nanti aku melihat foto-foto ini lagi,
+            aku harap hal pertama yang aku ingat bukan cuma tempat
+            atau tanggalnya, tapi perasaan yang aku punya
+            ketika melihat kamu."
+        </p>
+
+        <span>
+            — with all my love, 🤍
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- HONEST -->
+
+<section class="section">
+
+    <h3>
+        Kalau boleh jujur...
+    </h3>
+
+    <p>
+        Ada sesuatu yang sederhana tapi selalu membuat aku bersyukur:
+        mengetahui bahwa di dunia yang luas ini,
+        aku dipertemukan dengan kamu.
+    </p>
+
+    <p>
+        Dari sekian banyak orang,
+        ada kamu yang akhirnya punya tempat sendiri
+        di dalam hati aku.
+    </p>
+
+    <p>
+        Dan mungkin aku tidak selalu punya cara paling sempurna
+        untuk menunjukkan rasa sayang aku.
+        Kadang aku cuma bisa mengingatkan kamu makan,
+        menanyakan kamu sudah istirahat atau belum,
+        mengingatkan kamu jangan terlalu capek,
+        atau sekadar mengirim pesan panjang seperti ini.
+    </p>
+
+    <p>
+        Tapi di balik semua hal kecil itu,
+        sebenarnya ada satu kalimat yang selalu ingin aku sampaikan:
+        <strong>
+            aku peduli sama kamu,
+            lebih dari yang kadang bisa aku jelaskan
+            dengan kata-kata.
+        </strong>
+    </p>
+
+</section>
+
+
+
+<!-- QUOTE -->
+
+<section class="section big-quote">
+
+    <div class="quote-mark">
+        “
+    </div>
+
+    <p>
+        Aku tidak ingin kamu hanya punya seseorang
+        untuk merayakan hari-hari bahagia.
+        Aku ingin kamu juga tahu bahwa ketika hari terasa berat,
+        kamu tetap punya tempat untuk pulang dan bercerita.
+    </p>
+
+    <div class="quote-mark">
+        ”
+    </div>
+
+</section>
+
+
+
+<!-- DAY -->
+
+<section class="section">
+
+    <h3>
+        Untuk hari kamu hari ini 🌷
+    </h3>
+
+    <p>
+        Semoga langkah kamu dimudahkan.
+        Semoga urusan kamu dilancarkan.
+        Semoga hal-hal yang kamu takutkan
+        ternyata tidak seburuk yang kamu bayangkan.
+    </p>
+
+    <p>
+        Semoga orang-orang yang kamu temui hari ini
+        memperlakukan kamu dengan baik.
+        Semoga ada banyak alasan kecil yang membuat kamu tersenyum.
+    </p>
+
+    <p>
+        Kalau nanti kamu berhasil melewati sesuatu yang sulit,
+        jangan lupa untuk bangga sama diri kamu sendiri.
+        Kamu sudah sampai sejauh ini,
+        dan itu bukan sesuatu yang kecil.
+    </p>
+
+    <p>
+        Kalau nanti kamu gagal atau melakukan kesalahan,
+        jangan langsung menganggap diri kamu tidak cukup baik.
+        Kamu tetap berharga bahkan ketika semuanya
+        belum berjalan sesuai rencana.
+    </p>
+
+</section>
+
+
+
+<!-- CAPEK -->
+
+<section class="section">
+
+    <h3>
+        Kalau nanti kamu capek... 🫂
+    </h3>
+
+    <p>
+        Berhenti sebentar yaa.
+        Tarik napas.
+        Minum air.
+        Duduk dengan tenang.
+    </p>
+
+    <p>
+        Tidak apa-apa kalau hari ini kamu tidak bisa melakukan semuanya.
+        Kamu manusia, bukan mesin yang harus selalu kuat.
+    </p>
+
+    <p>
+        Dan kalau kamu ingin cerita,
+        cerita aja.
+        Cerita tentang sesuatu yang penting,
+        sesuatu yang sepele,
+        sesuatu yang membuat kamu senang,
+        bahkan sesuatu yang membuat kamu kesal.
+    </p>
+
+    <p>
+        Aku tidak selalu harus punya jawaban untuk semuanya.
+        Kadang aku cuma ingin menjadi seseorang
+        yang mau mendengarkan kamu.
+    </p>
+
+
+    <div class="promise">
+
+        <div class="promise-item">
+            🤍
+            <b>Aku akan tetap menghargai</b>
+            setiap cerita kecil yang kamu bagi.
+        </div>
+
+        <div class="promise-item">
+            🌷
+            <b>Aku akan tetap mendoakan</b>
+            hal-hal baik datang kepada kamu.
+        </div>
+
+        <div class="promise-item">
+            🫂
+            <b>Aku akan tetap mengingatkan</b>
+            kamu untuk menjaga diri sendiri.
+        </div>
+
+        <div class="promise-item">
+            ✨
+            <b>Aku akan tetap bangga</b>
+            melihat kamu terus berusaha.
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- THANK YOU -->
+
+<section class="section">
+
+    <h3>
+        Terima kasih, sayang.
+    </h3>
+
+    <p>
+        Terima kasih karena sudah hadir.
+        Terima kasih untuk semua percakapan,
+        perhatian, tawa, cerita random,
+        dan momen-momen kecil yang mungkin terlihat sederhana
+        tetapi punya arti sendiri buat aku.
+    </p>
+
+    <p>
+        Terima kasih karena tanpa kamu sadari,
+        kamu sudah menjadi bagian dari banyak hal
+        yang aku syukuri.
+        Ada hari-hari yang terasa lebih indah
+        hanya karena aku tahu ada kamu di dalamnya.
+    </p>
+
+    <p>
+        Dan kalau suatu hari nanti kamu lupa
+        seberapa berharganya diri kamu,
+        aku harap kamu membaca pesan ini lagi
+        dan mengingat bahwa ada seseorang
+        yang melihat kamu sebagai seseorang
+        yang sangat berarti.
+    </p>
+
+</section>
+
+
+
+<!-- LETTER -->
+
+<section class="letter">
+
+    <div class="letter-to">
+        Dear, semestaakuuu 🤍
+    </div>
+
+    <p>
+        Aku tidak tahu apakah pesan sepanjang ini
+        bisa benar-benar menggambarkan semua yang aku rasakan.
+        Tapi setidaknya, lewat halaman kecil ini,
+        aku ingin memberikan sedikit bagian dari hati aku untuk kamu.
+    </p>
+
+    <p>
+        Aku ingin kamu menjalani hari dengan tenang.
+        Aku ingin kamu makan dengan baik,
+        istirahat ketika lelah,
+        tertawa ketika bahagia,
+        dan tidak terlalu menyalahkan diri sendiri
+        ketika sesuatu tidak berjalan sesuai keinginan.
+    </p>
+
+    <p>
+        Aku ingin kamu tahu bahwa kamu tidak harus menjadi sempurna
+        supaya pantas disayangi.
+        Kamu tidak harus selalu kuat
+        supaya pantas dibanggakan.
+    </p>
+
+    <p>
+        Kamu cukup menjadi diri kamu sendiri.
+    </p>
+
+    <p>
+        Jadi, pagi ini jangan lupa tersenyum yaa.
+        Karena di suatu tempat,
+        ada aku yang ikut tersenyum hanya karena
+        membayangkan kamu sedang tersenyum juga.
+    </p>
+
+    <div class="letter-sign">
+
+        dengan seluruh rasa sayang,<br>
+
+        aku 🤍
+
+    </div>
+
+</section>
+
+
+
+<!-- EXTRA -->
+
+<section class="section">
+
+    <h3>
+        And one more thing... 🌙
+    </h3>
+
+    <p>
+        Kalau suatu hari kamu membuka halaman ini lagi
+        di waktu yang berbeda,
+        mungkin keadaan sudah berubah,
+        hari-hari sudah berganti,
+        dan banyak hal sudah tidak sama seperti sekarang.
+    </p>
+
+    <p>
+        Tapi aku harap satu hal tetap kamu ingat:
+        pernah ada seseorang yang dengan tulus
+        berharap pagi kamu selalu baik-baik saja.
+    </p>
+
+    <p>
+        Seseorang yang senang ketika kamu tersenyum,
+        yang ikut lega ketika kamu berhasil melewati sesuatu
+        yang sulit,
+        dan yang diam-diam selalu berharap
+        hidup memperlakukan kamu dengan lembut.
+    </p>
+
+    <p>
+        Jadi kalau hari ini kamu merasa tidak cukup,
+        baca ini sekali lagi:
+        <strong>
+            kamu cukup.
+            Kamu berharga.
+            Kamu pantas mendapatkan hal-hal baik.
+        </strong>
+    </p>
+
+</section>
+
+
+
+<!-- LAST QUOTE -->
+
+<section class="section big-quote">
+
+    <div class="quote-mark">
+        “
+    </div>
+
+    <p>
+        Dari begitu banyak hal yang bisa aku minta
+        dari hari ini,
+        aku cuma ingin satu:
+        semoga kamu pulang dengan hati yang lebih bahagia
+        daripada ketika kamu berangkat.
+    </p>
+
+    <div class="quote-mark">
+        ”
+    </div>
+
+</section>
+
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+    <div class="final-heart">
+        🤍
+    </div>
+
+    <h3>
+        Selamat pagi,<br>
+        cintaaakuuu.
+    </h3>
+
+    <p>
+        Bangunnnn yaaa sayangggg 🥺🤍
+        <br><br>
+
+        Hari ini milik kamu.
+        Jalani pelan-pelan.
+        Jangan lupa sarapan,
+        jangan lupa minum,
+        jangan terlalu capek,
+        dan yang paling penting...
+        <br><br>
+
+        <strong>
+            jangan pernah lupa kalau kamu
+            berharga banget.
+        </strong>
+    </p>
+
+    <div class="end">
+        I hope today is gentle with you.
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<script>
+
+/* =========================================
+   OPEN LETTER
+========================================= */
+
+function openLetter(){
+
+    document
+        .getElementById("opening")
+        .classList.add("hide");
+
+    document
+        .body
+        .classList
+        .remove("lock");
+
+    createParticles();
+
+}
+
+
+/* =========================================
+   FLOATING PARTICLES
+========================================= */
+
+function createParticles(){
+
+    const container =
+        document.getElementById("particles");
+
+    const symbols = [
+        "♡",
+        "🤍",
+        "✦",
+        "·",
+        "🌷"
+    ];
+
+    for(let i = 0; i < 28; i++){
+
+        const particle =
+            document.createElement("span");
+
+        particle.className =
+            "particle";
+
+        particle.innerText =
+            symbols[
+                Math.floor(
+                    Math.random() * symbols.length
+                )
+            ];
+
+        particle.style.left =
+            Math.random() * 100 + "%";
+
+        particle.style.fontSize =
+            (11 + Math.random() * 15) + "px";
+
+        particle.style.animationDuration =
+            (7 + Math.random() * 9) + "s";
+
+        particle.style.animationDelay =
+            (Math.random() * 8) + "s";
+
+        container.appendChild(particle);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
